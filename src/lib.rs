@@ -1,6 +1,13 @@
 //! The Sled datastore implementation.
 
+extern crate chrono;
+extern crate indradb;
+extern crate serde_json;
+extern crate sled;
+extern crate uuid;
+
 mod datastore;
+mod errors;
 mod managers;
 
 pub use self::datastore::{SledConfig, SledDatastore, SledTransaction};

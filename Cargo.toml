@@ -1,0 +1,26 @@
+[package]
+name = "indradb-sled"
+version = "0.1.0"
+authors = ["Yusuf Simonson <simonson@gmail.com>"]
+description = "A sled-backed datastore for IndraDB"
+homepage = "https://indradb.github.io"
+repository = "https://github.com/indradb/sled"
+keywords = ["graph", "database"]
+categories = ["database", "database-implementations"]
+license = "MPL-2.0"
+
+[lib]
+name = "indradb_sled"
+path = "src/lib.rs"
+
+[features]
+default = []
+test-suite = ["indradb-lib/test-suite"]
+bench-suite = ["indradb-lib/bench-suite"]
+
+[dependencies]
+chrono = { version = "0.4.19", features = ["serde"] }
+indradb-lib = "^2.2.0"
+serde_json = "^1.0.57"
+sled = { version = "0.34.6", features = ["compression", "no_metrics"] }
+uuid = { version = "~0.8.2", features = ["v1", "serde"] }

@@ -15,12 +15,13 @@ path = "src/lib.rs"
 
 [features]
 default = []
-test-suite = ["indradb-lib/test-suite"]
-bench-suite = ["indradb-lib/bench-suite"]
+test-suite = ["indradb-lib/test-suite", "tempfile"]
+bench-suite = ["indradb-lib/bench-suite", "tempfile"]
 
 [dependencies]
 chrono = { version = "0.4.19", features = ["serde"] }
 indradb-lib = "^2.2.0"
 serde_json = "^1.0.57"
 sled = { version = "0.34.6", features = ["compression", "no_metrics"] }
+tempfile = { version = "^3.2.0", optional = true}
 uuid = { version = "~0.8.2", features = ["v1", "serde"] }

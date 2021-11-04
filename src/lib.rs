@@ -1,9 +1,14 @@
 //! The Sled datastore implementation.
 
+#![cfg_attr(feature = "bench-suite", feature(test))]
+
 extern crate chrono;
+#[macro_use]
 extern crate indradb;
 extern crate serde_json;
 extern crate sled;
+#[cfg(any(feature = "bench-suite", feature = "test-suite"))]
+extern crate tempfile;
 extern crate uuid;
 
 mod datastore;

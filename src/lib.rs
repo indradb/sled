@@ -3,8 +3,13 @@
 #![cfg_attr(feature = "bench-suite", feature(test))]
 
 extern crate chrono;
+
+#[cfg(any(feature = "bench-suite", feature = "test-suite"))]
 #[macro_use]
 extern crate indradb;
+#[cfg(not(any(feature = "bench-suite", feature = "test-suite")))]
+extern crate indradb;
+
 extern crate serde_json;
 extern crate sled;
 #[cfg(any(feature = "bench-suite", feature = "test-suite"))]

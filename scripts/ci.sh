@@ -5,7 +5,7 @@ set -ex
 rust_variant=$1
 os=$2
 
-cargo test
+cargo test --features=test-suite
 
 if [ "$os" == "ubuntu-latest" ]; then
     if [ "$rust_variant" == "stable" ]; then

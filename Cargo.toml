@@ -1,6 +1,6 @@
 [package]
 name = "indradb-sled"
-version = "0.1.0"
+version = "4.0.0-RC1"
 authors = ["Yusuf Simonson <simonson@gmail.com>"]
 description = "A sled-backed datastore for IndraDB"
 homepage = "https://indradb.github.io"
@@ -8,6 +8,7 @@ repository = "https://github.com/indradb/sled"
 keywords = ["graph", "database"]
 categories = ["database", "database-implementations"]
 license = "MPL-2.0"
+edition = "2021"
 
 [lib]
 name = "indradb_sled"
@@ -19,9 +20,11 @@ test-suite = ["indradb-lib/test-suite", "tempfile"]
 bench-suite = ["indradb-lib/bench-suite", "tempfile"]
 
 [dependencies]
-chrono = { version = "0.4.19", features = ["serde"] }
-indradb-lib = "^2.2.0"
-serde_json = "^1.0.57"
-sled = { version = "0.34.6", features = ["compression", "no_metrics"] }
-tempfile = { version = "^3.2.0", optional = true}
-uuid = { version = "~0.8.2", features = ["v1", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+indradb-lib = "4.0"
+serde_json = "1.0"
+sled = { version = "0.34", features = ["compression"] }
+tempfile = { version = "3.10", optional = true }
+uuid = { version = "1.9", features = ["v1", "serde"] }
+ecow = { version = "0.2.2" }
+thiserror = { version = "1.0" }
